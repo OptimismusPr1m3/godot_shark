@@ -128,9 +128,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_dtemy")
 }],
-"loop": true,
+"loop": false,
 "name": &"fin_slap",
-"speed": 7.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -353,7 +353,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("73_qc568")
 }],
-"loop": true,
+"loop": false,
 "name": &"poisoned_hurt",
 "speed": 6.0
 }, {

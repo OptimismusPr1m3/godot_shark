@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dot2ldekdj7e6"]
+[gd_scene load_steps=21 format=3 uid="uid://dot2ldekdj7e6"]
 
 [ext_resource type="Texture2D" uid="uid://b1d0asbcojt50" path="res://assets/enemies/pufferfish/aggro_swim/green/1.png" id="1_lijke"]
+[ext_resource type="Script" uid="uid://bqt6drhe7xqka" path="res://scripts/pufferfish_anim.gd" id="1_q1qly"]
 [ext_resource type="Texture2D" uid="uid://beywf8ot2xj5b" path="res://assets/enemies/pufferfish/aggro_swim/green/2.png" id="2_q1qly"]
 [ext_resource type="Texture2D" uid="uid://ods6xv3ybqai" path="res://assets/enemies/pufferfish/aggro_swim/green/3.png" id="3_xfn78"]
 [ext_resource type="Texture2D" uid="uid://4mo30kokchlj" path="res://assets/enemies/pufferfish/aggro_swim/green/4.png" id="4_hbl42"]
@@ -39,7 +40,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"aggro_swim",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -57,7 +58,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_rjkd8")
 }],
-"loop": true,
+"loop": false,
 "name": &"aggro_trans",
 "speed": 5.0
 }, {
@@ -71,7 +72,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_pbilv")
 }],
-"loop": true,
+"loop": false,
 "name": &"die",
 "speed": 5.0
 }, {
@@ -98,11 +99,11 @@ animations = [{
 
 [node name="Pufferfish" type="CharacterBody2D"]
 scale = Vector2(0.405, 0.405)
+script = ExtResource("1_q1qly")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5lwrp")
-animation = &"swim"
-frame_progress = 0.170145
+animation = &"aggro_swim"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-68, 34, -110, -11, -109, -36, -47, -84, 35, -81, 61, -51, 94, -69, 98, 8, 73, -7, 15, 36, -18, 44)

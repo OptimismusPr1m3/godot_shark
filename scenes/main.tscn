@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://clvfsknm1174m"]
 
-[ext_resource type="PackedScene" uid="uid://cv437sv4yfeaa" path="res://Scenes/level2.tscn" id="1_bo1nx"]
-[ext_resource type="PackedScene" uid="uid://bu67q8qkucidw" path="res://Scenes/sharkie.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://cn6w3mt6amv" path="res://Scenes/coin.tscn" id="3_8gbba"]
-[ext_resource type="PackedScene" uid="uid://dkcy71ayqmwgd" path="res://Scenes/potion.tscn" id="4_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://dot2ldekdj7e6" path="res://Scenes/pufferfish.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cv437sv4yfeaa" path="res://scenes/level2.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bu67q8qkucidw" path="res://scenes/sharkie.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://cn6w3mt6amv" path="res://scenes/coin.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dkcy71ayqmwgd" path="res://scenes/potion.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://dot2ldekdj7e6" path="res://scenes/pufferfish.tscn" id="5_kry3j"]
 
 [node name="Main" type="Node2D"]
 
@@ -33,3 +33,12 @@ position = Vector2(909, 226)
 
 [node name="Pufferfish" parent="." instance=ExtResource("5_kry3j")]
 position = Vector2(1506, 273)
+
+[node name="Pufferfish2" parent="." instance=ExtResource("5_kry3j")]
+position = Vector2(1395, 444)
+
+[node name="Pufferfish3" parent="." instance=ExtResource("5_kry3j")]
+position = Vector2(1222, 84)
+
+[node name="Pufferfish4" parent="." instance=ExtResource("5_kry3j")]
+position = Vector2(1073, 359)
