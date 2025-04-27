@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://clvfsknm1174m"]
+
+[ext_resource type="PackedScene" uid="uid://cv437sv4yfeaa" path="res://Scenes/level2.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bu67q8qkucidw" path="res://Scenes/sharkie.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://cn6w3mt6amv" path="res://Scenes/coin.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dkcy71ayqmwgd" path="res://Scenes/potion.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://dot2ldekdj7e6" path="res://Scenes/pufferfish.tscn" id="5_kry3j"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Sharkie" parent="." instance=ExtResource("1_jjgbg")]
+position = Vector2(242, 290)
+
+[node name="Coin" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(995, 526)
+
+[node name="Background" parent="." instance=ExtResource("1_bo1nx")]
+
+[node name="Coin2" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(376, 542)
+
+[node name="Coin3" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(584, 188)
+
+[node name="Coin4" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(590, 332)
+
+[node name="Potion" parent="." instance=ExtResource("4_jjvhh")]
+position = Vector2(728, 477)
+
+[node name="Potion2" parent="." instance=ExtResource("4_jjvhh")]
+position = Vector2(909, 226)
+
+[node name="Pufferfish" parent="." instance=ExtResource("5_kry3j")]
+position = Vector2(1506, 273)

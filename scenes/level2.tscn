@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv437sv4yfeaa"]
+
+[ext_resource type="Texture2D" uid="uid://bcsmgvjstbjwd" path="res://assets/background/layers/floor/D.png" id="1_cmmbj"]
+[ext_resource type="Texture2D" uid="uid://c8e4vi74bihtk" path="res://assets/background/layers/water/D.png" id="2_ckivy"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8uh7m"]
+b = Vector2(0, 618.421)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6uqi0"]
+b = Vector2(4649, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ckivy"]
+b = Vector2(4607, 3)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="LeftBarrier" type="CollisionShape2D" parent="."]
+scale = Vector2(0.919581, 1.04783)
+shape = SubResource("SegmentShape2D_8uh7m")
+
+[node name="TopBarrier" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_6uqi0")
+
+[node name="RightBarrier" type="CollisionShape2D" parent="."]
+position = Vector2(4600, 1.00001)
+scale = Vector2(0.919581, 1.04783)
+shape = SubResource("SegmentShape2D_8uh7m")
+
+[node name="BottomBarrier" type="CollisionShape2D" parent="."]
+position = Vector2(0, 647)
+shape = SubResource("SegmentShape2D_ckivy")
+debug_color = Color(0.930329, 0.186289, 0.474677, 0.42)
+
+[node name="CanvasLayer" type="Node" parent="."]
+
+[node name="BottomBOrder1" type="Sprite2D" parent="CanvasLayer"]
+z_index = -2
+position = Vector2(1150, 324)
+scale = Vector2(0.599, 0.599)
+texture = ExtResource("1_cmmbj")
+
+[node name="BottomBorder2" type="Sprite2D" parent="CanvasLayer"]
+z_index = -2
+position = Vector2(3450, 324)
+scale = Vector2(0.599, 0.599)
+texture = ExtResource("1_cmmbj")
+
+[node name="Water1" type="Sprite2D" parent="CanvasLayer"]
+z_index = -4
+position = Vector2(1147, 243)
+scale = Vector2(0.599, 0.599)
+texture = ExtResource("2_ckivy")
+
+[node name="Water2" type="Sprite2D" parent="CanvasLayer"]
+z_index = -4
+position = Vector2(3446, 243)
+scale = Vector2(0.599, 0.599)
+texture = ExtResource("2_ckivy")

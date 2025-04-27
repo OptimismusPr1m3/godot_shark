@@ -1,0 +1,61 @@
+[gd_scene load_steps=12 format=3 uid="uid://dkcy71ayqmwgd"]
+
+[ext_resource type="Script" uid="uid://hhhi7sgdsqwf" path="res://scripts/potion_animation.gd" id="1_v1jwi"]
+[ext_resource type="Texture2D" uid="uid://mwm7bmxcl80g" path="res://assets/objects/green_potions/1.png" id="2_sf53k"]
+[ext_resource type="Texture2D" uid="uid://0ox4aehjw7bh" path="res://assets/objects/green_potions/2.png" id="3_onw0v"]
+[ext_resource type="Texture2D" uid="uid://dhl7r4xjmu73i" path="res://assets/objects/green_potions/3.png" id="4_xmutu"]
+[ext_resource type="Texture2D" uid="uid://peet7ylxncol" path="res://assets/objects/green_potions/4.png" id="5_d5p8s"]
+[ext_resource type="Texture2D" uid="uid://c4nj7i3ukspw2" path="res://assets/objects/green_potions/5.png" id="6_2t2pl"]
+[ext_resource type="Texture2D" uid="uid://bdaabxq04o21s" path="res://assets/objects/green_potions/6.png" id="7_uvhuo"]
+[ext_resource type="Texture2D" uid="uid://c76fnroj85hqm" path="res://assets/objects/green_potions/7.png" id="8_atdgd"]
+[ext_resource type="Texture2D" uid="uid://bf4n2ierfdtfj" path="res://assets/objects/green_potions/8.png" id="9_shqcl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2s3iu"]
+radius = 25.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5y855"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sf53k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_onw0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xmutu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d5p8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2t2pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uvhuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_atdgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_shqcl")
+}],
+"loop": true,
+"name": &"potion_blinking",
+"speed": 10.0
+}]
+
+[node name="Potion" type="Area2D"]
+script = ExtResource("1_v1jwi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 90)
+shape = SubResource("CircleShape2D_2s3iu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 60)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_5y855")
+animation = &"potion_blinking"
+frame = 7
+frame_progress = 0.649563

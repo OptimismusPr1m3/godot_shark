@@ -1,0 +1,108 @@
+[gd_scene load_steps=20 format=3 uid="uid://dot2ldekdj7e6"]
+
+[ext_resource type="Texture2D" uid="uid://b1d0asbcojt50" path="res://assets/enemies/pufferfish/aggro_swim/green/1.png" id="1_lijke"]
+[ext_resource type="Texture2D" uid="uid://beywf8ot2xj5b" path="res://assets/enemies/pufferfish/aggro_swim/green/2.png" id="2_q1qly"]
+[ext_resource type="Texture2D" uid="uid://ods6xv3ybqai" path="res://assets/enemies/pufferfish/aggro_swim/green/3.png" id="3_xfn78"]
+[ext_resource type="Texture2D" uid="uid://4mo30kokchlj" path="res://assets/enemies/pufferfish/aggro_swim/green/4.png" id="4_hbl42"]
+[ext_resource type="Texture2D" uid="uid://cmfiuwdv4tl68" path="res://assets/enemies/pufferfish/aggro_swim/green/5.png" id="5_deoys"]
+[ext_resource type="Texture2D" uid="uid://3b0d8yuwbbkx" path="res://assets/enemies/pufferfish/aggro_transition/green/1.png" id="6_wnfa8"]
+[ext_resource type="Texture2D" uid="uid://d0jwf0iu0aafs" path="res://assets/enemies/pufferfish/aggro_transition/green/2.png" id="7_bceyy"]
+[ext_resource type="Texture2D" uid="uid://m3pukcmn0r2e" path="res://assets/enemies/pufferfish/aggro_transition/green/3.png" id="8_ln5ht"]
+[ext_resource type="Texture2D" uid="uid://c1s04ywvf8bvj" path="res://assets/enemies/pufferfish/aggro_transition/green/4.png" id="9_opc4j"]
+[ext_resource type="Texture2D" uid="uid://dtse2p3b0de4b" path="res://assets/enemies/pufferfish/aggro_transition/green/5.png" id="10_rjkd8"]
+[ext_resource type="Texture2D" uid="uid://bfq74ad1u7nu6" path="res://assets/enemies/pufferfish/die/green/1.png" id="11_2kbdu"]
+[ext_resource type="Texture2D" uid="uid://dn1br8x3gclcb" path="res://assets/enemies/pufferfish/die/green/2.png" id="12_gxu5e"]
+[ext_resource type="Texture2D" uid="uid://cci4qkt2rwvif" path="res://assets/enemies/pufferfish/die/green/3.png" id="13_pbilv"]
+[ext_resource type="Texture2D" uid="uid://disdhnetw7evi" path="res://assets/enemies/pufferfish/swim/green/1.png" id="14_yjfry"]
+[ext_resource type="Texture2D" uid="uid://068nji826mio" path="res://assets/enemies/pufferfish/swim/green/2.png" id="15_wpli8"]
+[ext_resource type="Texture2D" uid="uid://dy8guq8so5hq5" path="res://assets/enemies/pufferfish/swim/green/3.png" id="16_he27x"]
+[ext_resource type="Texture2D" uid="uid://b1je0466m704e" path="res://assets/enemies/pufferfish/swim/green/4.png" id="17_61wyx"]
+[ext_resource type="Texture2D" uid="uid://d1vqi6puhtoib" path="res://assets/enemies/pufferfish/swim/green/5.png" id="18_0wqo7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5lwrp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lijke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q1qly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xfn78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hbl42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_deoys")
+}],
+"loop": true,
+"name": &"aggro_swim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_wnfa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bceyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ln5ht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_opc4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rjkd8")
+}],
+"loop": true,
+"name": &"aggro_trans",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_2kbdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gxu5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pbilv")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_yjfry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wpli8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_he27x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_61wyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0wqo7")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 8.0
+}]
+
+[node name="Pufferfish" type="CharacterBody2D"]
+scale = Vector2(0.405, 0.405)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5lwrp")
+animation = &"swim"
+frame_progress = 0.170145
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-68, 34, -110, -11, -109, -36, -47, -84, 35, -81, 61, -51, 94, -69, 98, 8, 73, -7, 15, 36, -18, 44)
