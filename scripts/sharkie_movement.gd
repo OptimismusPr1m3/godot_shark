@@ -1,14 +1,16 @@
 extends CharacterBody2D
 
 @onready var animShark = $AnimatedSprite2D
-#@onready var coin = $"../Coin"
+@onready var areaShark = $Area2D
 
 var sharkSpeed = 5.0
 var was_hit = false
+var health = 100
 
 func _ready() -> void:
 	add_to_group('player')
 	animShark.animation_finished.connect(_on_animation_finished)
+	areaShark.body_entered.connect(_onEnemyHit)
 
 
 func _physics_process(delta: float) -> void:
@@ -28,18 +30,17 @@ func _physics_process(delta: float) -> void:
 			animShark.play("idle")
 		
 	move_and_slide()
-	manageCollision()
 
 
-func manageCollision():
-	for i in get_slide_collision_count():
-		var collider = get_slide_collision(i).get_collider()
-		#var collider = collision.get_collider()
-		if collider.is_in_group('enemies'):
-			hit(10)
+func _onEnemyHit(body:Node2D):
+	print('Enemy has collided: ', body)
+	if body.is_in_group('enemies'):
+		hit(10)
+		print('Lebenspunkte: ',health)
 
 func hit(damage: int):
 	print('Got dmg: ', damage)
+	health -= damage
 	was_hit = true
 	animShark.play("poisoned_hurt")
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dot2ldekdj7e6"]
+[gd_scene load_steps=22 format=3 uid="uid://dot2ldekdj7e6"]
 
 [ext_resource type="Texture2D" uid="uid://b1d0asbcojt50" path="res://assets/enemies/pufferfish/aggro_swim/green/1.png" id="1_lijke"]
 [ext_resource type="Script" uid="uid://bqt6drhe7xqka" path="res://scripts/pufferfish_anim.gd" id="1_q1qly"]
@@ -97,8 +97,15 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q1qly"]
+b = Vector2(0, 192.593)
+
 [node name="Pufferfish" type="CharacterBody2D"]
 scale = Vector2(0.405, 0.405)
+collision_layer = 4
+collision_mask = 0
+slide_on_ceiling = false
+floor_block_on_wall = false
 script = ExtResource("1_q1qly")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -107,3 +114,10 @@ animation = &"aggro_swim"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-68, 34, -110, -11, -109, -36, -47, -84, 35, -81, 61, -51, 94, -69, 98, 8, 73, -7, 15, 36, -18, 44)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-113.58, -83.9506)
+shape = SubResource("SegmentShape2D_q1qly")

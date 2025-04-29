@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://tmk3r6dgvavt"]
+
+[ext_resource type="Texture2D" uid="uid://dp1j2k03q4ffh" path="res://assets/enemies/jellyfish/dead/lila/1.png" id="1_70u1h"]
+[ext_resource type="Script" uid="uid://dq87eyjm75k0h" path="res://scripts/jelly_anim.gd" id="1_wx7tc"]
+[ext_resource type="Texture2D" uid="uid://cphqtfc3gx5ku" path="res://assets/enemies/jellyfish/dead/lila/2.png" id="2_wx7tc"]
+[ext_resource type="Texture2D" uid="uid://irim4rdpa6il" path="res://assets/enemies/jellyfish/dead/lila/3.png" id="3_d5j6k"]
+[ext_resource type="Texture2D" uid="uid://dblfoh8p4xq5" path="res://assets/enemies/jellyfish/dead/lila/4.png" id="4_1tgob"]
+[ext_resource type="Texture2D" uid="uid://347xmrc6kfmj" path="res://assets/enemies/jellyfish/regular_damage/Lila1.png" id="5_yv7x3"]
+[ext_resource type="Texture2D" uid="uid://jluo8ykdgc08" path="res://assets/enemies/jellyfish/regular_damage/Lila2.png" id="6_sd5xm"]
+[ext_resource type="Texture2D" uid="uid://c808orw876cbb" path="res://assets/enemies/jellyfish/regular_damage/Lila3.png" id="7_nrswm"]
+[ext_resource type="Texture2D" uid="uid://b1t4cwp1cw46h" path="res://assets/enemies/jellyfish/regular_damage/Lila4.png" id="8_kydbw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jj2kt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_70u1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wx7tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d5j6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1tgob")
+}],
+"loop": false,
+"name": &"dead_lila",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_yv7x3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sd5xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nrswm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kydbw")
+}],
+"loop": true,
+"name": &"swim_lila",
+"speed": 6.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_wx7tc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-78, -51, -30, -112, 36, -113, 70, -15, 25, 105, -30, 105)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jj2kt")
+animation = &"swim_lila"
+frame_progress = 0.855424

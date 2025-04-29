@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var player = get_tree().get_first_node_in_group('player')
 @onready var puff = $AnimatedSprite2D
+@onready var puffArea = $Area2D
 
 var puffSpeed = 1.0
 var aggroDistance = 420
@@ -12,7 +13,10 @@ func _ready() -> void:
 	add_to_group('enemies')
 	puff.animation_finished.connect(_aggroTransition)
 	print(player)
+	puffArea.body_entered.connect(_onEnteredTest)
 
+func _onEnteredTest(body: Node2D):
+	print('Body entered: ', body)
 
 func _physics_process(delta: float) -> void:
 	if !isAggro && !isAggroTrans:
