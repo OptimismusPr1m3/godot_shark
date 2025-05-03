@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu4l4of7ehuse"]
+
+[ext_resource type="Texture2D" uid="uid://46hsadmnv6fd" path="res://assets/sharkie/attack/bubble_trap/poisoned_bubble.png" id="1_cy2hd"]
+[ext_resource type="Script" uid="uid://2xkt25r5k6pl" path="res://scripts/p_bubble.gd" id="1_pe7mj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pe7mj"]
+radius = 22.15
+
+[node name="bubble" type="Area2D"]
+script = ExtResource("1_pe7mj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pe7mj")
+
+[node name="PoisonedBubble" type="Sprite2D" parent="."]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_cy2hd")

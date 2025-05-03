@@ -157,7 +157,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("16_xccyf")
 }],
-"loop": true,
+"loop": false,
 "name": &"green_bubble",
 "speed": 8.0
 }, {
