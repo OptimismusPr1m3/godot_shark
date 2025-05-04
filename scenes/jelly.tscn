@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://tmk3r6dgvavt"]
+[gd_scene load_steps=12 format=3 uid="uid://tmk3r6dgvavt"]
 
 [ext_resource type="Texture2D" uid="uid://dp1j2k03q4ffh" path="res://assets/enemies/jellyfish/dead/lila/1.png" id="1_70u1h"]
 [ext_resource type="Script" uid="uid://dq87eyjm75k0h" path="res://scripts/jelly_anim.gd" id="1_wx7tc"]
@@ -27,7 +27,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dead_lila",
-"speed": 7.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -47,6 +47,10 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wx7tc"]
+a = Vector2(0, -12)
+b = Vector2(0, 214)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 0
@@ -57,5 +61,11 @@ polygon = PackedVector2Array(-78, -51, -30, -112, 36, -113, 70, -15, 25, 105, -3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jj2kt")
-animation = &"swim_lila"
-frame_progress = 0.855424
+animation = &"dead_lila"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-67, -108)
+shape = SubResource("SegmentShape2D_wx7tc")

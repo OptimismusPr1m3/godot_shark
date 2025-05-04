@@ -7,6 +7,8 @@
 radius = 22.15
 
 [node name="bubble" type="Area2D"]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_pe7mj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

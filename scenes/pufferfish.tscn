@@ -110,7 +110,7 @@ script = ExtResource("1_q1qly")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5lwrp")
-animation = &"aggro_swim"
+animation = &"die"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-68, 34, -110, -11, -109, -36, -47, -84, 35, -81, 61, -51, 94, -69, 98, 8, 73, -7, 15, 36, -18, 44)

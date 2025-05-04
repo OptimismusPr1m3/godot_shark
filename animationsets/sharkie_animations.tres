@@ -454,7 +454,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("100_4lh76")
 }],
-"loop": true,
+"loop": false,
 "name": &"white_bubble",
 "speed": 8.0
 }]

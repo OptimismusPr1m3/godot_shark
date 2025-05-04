@@ -9,17 +9,21 @@ var isAggro: bool = false
 var isAggroTrans: bool = false
 var hasSlapped: bool = false
 var isColliding: bool = false
+var isDead: bool = false
+var dieAnimationCount = 0
+var hasLaunched: bool = false
+
 
 func moveChar(direction: Vector2, sprite: AnimatedSprite2D, swimAnim: String, idleAnim: String):
 	if direction != Vector2.ZERO:
 		velocity = direction * 100 * movementSpeed
-		if !was_hit && !hasSlapped:
+		if !was_hit && !hasSlapped && !hasLaunched:
 			sprite.play(swimAnim)
 		if direction.x != 0:
 			sprite.flip_h = direction.x < 0
 	else:
 		velocity = Vector2.ZERO
-		if !was_hit && !hasSlapped:
+		if !was_hit && !hasSlapped && !hasLaunched:
 			sprite.play(idleAnim)
 
 func hit(damage: int, sprite: AnimatedSprite2D, hurtAnim: String):
@@ -27,3 +31,7 @@ func hit(damage: int, sprite: AnimatedSprite2D, hurtAnim: String):
 	health -= damage
 	was_hit = true
 	sprite.play(hurtAnim)
+
+func checkDeath():
+	if isDead:
+		queue_free()

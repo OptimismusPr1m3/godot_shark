@@ -8,7 +8,7 @@ var aggroDistance = 420
 
 
 func _ready() -> void:
-	add_to_group('enemies')
+	add_to_group('enemies_p')
 	puff.animation_finished.connect(_aggroTransition)
 	puffArea.body_entered.connect(_onEnteredTest)
 	print(player)
@@ -16,16 +16,19 @@ func _ready() -> void:
 func _onEnteredTest(body: Node2D):
 	print('Body entered: ', body)
 
-func _physics_process(delta: float) -> void:
-	if !isAggro && !isAggroTrans:
+func _physics_process(_delta: float) -> void:
+	if !isAggro && !isAggroTrans && !isDead && !was_hit:
 		puff.play("swim")
 		velocity.x = -100 * movementSpeed
-	elif isAggroTrans:
+	elif isAggroTrans && !isDead && !was_hit:
 		puff.play("aggro_trans")
 		velocity.x = -100 * movementSpeed
-	elif isAggro && !isAggroTrans:
+	elif isAggro && !isAggroTrans && !isDead && !was_hit:
 		puff.play("aggro_swim")
 		velocity.x = -100 * movementSpeed
+	elif was_hit:
+		puff.play("die")
+		velocity.x = 0
 	calcDistanceToPlayer()
 	move_and_slide()
 
