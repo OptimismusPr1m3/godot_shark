@@ -14,7 +14,12 @@ func _ready() -> void:
 	print(player)
 
 func _onEnteredTest(body: Node2D):
-	print('Body entered: ', body)
+	if puff.animation == 'die':
+		if dieAnimationCount < 2:
+			dieAnimationCount+= 1
+		elif dieAnimationCount >= 2:
+			isDead = true
+			queue_free()
 
 func _physics_process(_delta: float) -> void:
 	if !isAggro && !isAggroTrans && !isDead && !was_hit:
@@ -38,6 +43,12 @@ func _aggroTransition():
 		isAggro = true
 		puff.play("aggro_swim")
 		movementSpeed = 2.0
+	if puff.animation == 'die':
+		if dieAnimationCount < 2:
+			dieAnimationCount+= 1
+		elif dieAnimationCount >= 2:
+			isDead = true
+			queue_free()
 
 func calcDistanceToPlayer():
 	if player:

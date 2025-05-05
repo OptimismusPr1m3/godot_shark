@@ -12,18 +12,18 @@ var isColliding: bool = false
 var isDead: bool = false
 var dieAnimationCount = 0
 var hasLaunched: bool = false
-
+var isSlapping: bool = false
 
 func moveChar(direction: Vector2, sprite: AnimatedSprite2D, swimAnim: String, idleAnim: String):
 	if direction != Vector2.ZERO:
 		velocity = direction * 100 * movementSpeed
-		if !was_hit && !hasSlapped && !hasLaunched:
+		if !was_hit && !hasSlapped && !hasLaunched && !isSlapping:
 			sprite.play(swimAnim)
 		if direction.x != 0:
 			sprite.flip_h = direction.x < 0
 	else:
 		velocity = Vector2.ZERO
-		if !was_hit && !hasSlapped && !hasLaunched:
+		if !was_hit && !hasSlapped && !hasLaunched && !isSlapping:
 			sprite.play(idleAnim)
 
 func hit(damage: int, sprite: AnimatedSprite2D, hurtAnim: String):
