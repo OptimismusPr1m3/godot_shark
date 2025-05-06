@@ -63,6 +63,10 @@ func _onEnemyHit(body:Node2D):
 		isColliding = true
 		hit(10, animShark, "poisoned_hurt")
 		print('Coins:', coins)
+	elif body.is_in_group('boss'):
+		isColliding = true
+		hit(10, animShark, "poisoned_hurt")
+		body.isAttacking = true
 
 func getDirection():
 	if !animShark.flip_h:
@@ -78,7 +82,7 @@ func setBubbleLaunch():
 
 func launchBubble(color: String):
 	var direction = getDirection()
-	var bubble
+	var bubble: Throwable
 	if  color == 'green':
 		bubble = pBubble.instantiate()
 	elif color == 'white':

@@ -13,6 +13,7 @@ var isDead: bool = false
 var dieAnimationCount = 0
 var hasLaunched: bool = false
 var isSlapping: bool = false
+var isAttacking: bool = false
 
 func moveChar(direction: Vector2, sprite: AnimatedSprite2D, swimAnim: String, idleAnim: String):
 	if direction != Vector2.ZERO:

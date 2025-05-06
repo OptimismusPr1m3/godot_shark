@@ -10,16 +10,7 @@ var aggroDistance = 420
 func _ready() -> void:
 	add_to_group('enemies_p')
 	puff.animation_finished.connect(_aggroTransition)
-	puffArea.body_entered.connect(_onEnteredTest)
 	print(player)
-
-func _onEnteredTest(body: Node2D):
-	if puff.animation == 'die':
-		if dieAnimationCount < 2:
-			dieAnimationCount+= 1
-		elif dieAnimationCount >= 2:
-			isDead = true
-			queue_free()
 
 func _physics_process(_delta: float) -> void:
 	if !isAggro && !isAggroTrans && !isDead && !was_hit:
