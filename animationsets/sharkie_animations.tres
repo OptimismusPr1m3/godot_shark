@@ -292,7 +292,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("56_nfixr")
 }],
-"loop": true,
+"loop": false,
 "name": &"no_bubble",
 "speed": 8.0
 }, {

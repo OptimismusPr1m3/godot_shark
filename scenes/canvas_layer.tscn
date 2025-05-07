@@ -1,0 +1,120 @@
+[gd_scene load_steps=23 format=3 uid="uid://crq380hou4iyn"]
+
+[ext_resource type="Script" uid="uid://okrp8imdgwm5" path="res://scenes/ui.gd" id="1_g6s7q"]
+[ext_resource type="Texture2D" uid="uid://6jjhif85qokj" path="res://assets/bars/life_bar/100_6.png" id="2_jtalx"]
+[ext_resource type="Texture2D" uid="uid://70xsqvl3i3mh" path="res://assets/bars/life_bar/80_5.png" id="3_wskm7"]
+[ext_resource type="Texture2D" uid="uid://dn81nhit3160s" path="res://assets/bars/life_bar/60_4.png" id="4_6gso4"]
+[ext_resource type="Texture2D" uid="uid://cv1nkrkialk7n" path="res://assets/bars/life_bar/40_3.png" id="5_0gp8r"]
+[ext_resource type="Texture2D" uid="uid://tm7g55fbd07l" path="res://assets/bars/life_bar/20_2.png" id="6_8hp1u"]
+[ext_resource type="Texture2D" uid="uid://crtif2lvbxrw" path="res://assets/bars/life_bar/0_1.png" id="7_jgm0l"]
+[ext_resource type="Texture2D" uid="uid://b0cdasf707pmn" path="res://assets/bars/coin_bar/100_6.png" id="8_xfvq4"]
+[ext_resource type="Texture2D" uid="uid://dj8suqek75oat" path="res://assets/bars/coin_bar/80_5.png" id="9_w4bgk"]
+[ext_resource type="Texture2D" uid="uid://cuowgo1ucsi0c" path="res://assets/bars/coin_bar/60_4.png" id="10_nuyhn"]
+[ext_resource type="Texture2D" uid="uid://b78v1v7b26ak7" path="res://assets/bars/coin_bar/40_3.png" id="11_llckv"]
+[ext_resource type="Texture2D" uid="uid://dgdxsgsp4iawi" path="res://assets/bars/coin_bar/20_2.png" id="12_iubfk"]
+[ext_resource type="Texture2D" uid="uid://ckcuhoeau78g2" path="res://assets/bars/coin_bar/0_1.png" id="13_3r0ni"]
+[ext_resource type="Texture2D" uid="uid://cx3nvckouyph5" path="res://assets/bars/potion_bar/100_6.png" id="14_fxvcf"]
+[ext_resource type="Texture2D" uid="uid://bb0mlkysxm0dj" path="res://assets/bars/potion_bar/80_5.png" id="15_s2a36"]
+[ext_resource type="Texture2D" uid="uid://bey76l2rr6djt" path="res://assets/bars/potion_bar/60_4.png" id="16_ckgqs"]
+[ext_resource type="Texture2D" uid="uid://dwt8123qkkpkk" path="res://assets/bars/potion_bar/40_3.png" id="17_0tjvd"]
+[ext_resource type="Texture2D" uid="uid://ryb75et75sjd" path="res://assets/bars/potion_bar/20_2.png" id="18_qtgob"]
+[ext_resource type="Texture2D" uid="uid://ctebp7jkt8bql" path="res://assets/bars/potion_bar/0_1.png" id="19_rpj2f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k7gpq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jtalx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wskm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6gso4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0gp8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8hp1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jgm0l")
+}],
+"loop": false,
+"name": &"health",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_av0r5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xfvq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w4bgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nuyhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_llckv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_iubfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3r0ni")
+}],
+"loop": true,
+"name": &"coin",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ubmo1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_fxvcf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_s2a36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ckgqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0tjvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qtgob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rpj2f")
+}],
+"loop": true,
+"name": &"poison",
+"speed": 5.0
+}]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_g6s7q")
+
+[node name="health" type="AnimatedSprite2D" parent="."]
+position = Vector2(168, 24)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_k7gpq")
+animation = &"health"
+
+[node name="coins" type="AnimatedSprite2D" parent="."]
+position = Vector2(168, 152)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_av0r5")
+animation = &"coin"
+
+[node name="potion" type="AnimatedSprite2D" parent="."]
+position = Vector2(168, 88)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_ubmo1")
+animation = &"poison"

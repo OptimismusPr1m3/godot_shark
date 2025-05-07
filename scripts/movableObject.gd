@@ -33,6 +33,6 @@ func hit(damage: int, sprite: AnimatedSprite2D, hurtAnim: String):
 	was_hit = true
 	sprite.play(hurtAnim)
 
-func checkDeath():
-	if isDead:
-		queue_free()
+func checkHealth():
+	if health <=0:
+		isDead = true

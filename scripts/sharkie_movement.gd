@@ -31,9 +31,13 @@ func _physics_process(_delta: float) -> void:
 	checkSlapping()
 
 func manageAttacks():
-	if Input.is_action_just_pressed("ui_select") && !hasLaunched && !isColliding && !isSlapping:
+	if Input.is_action_just_pressed("ui_select") && !hasLaunched && !isColliding && !isSlapping && potions > 0:
 		hasLaunched = true
 		animShark.play("green_bubble")
+		potions -= 10
+	elif Input.is_action_just_pressed("ui_select") && !hasLaunched && !isColliding && !isSlapping && potions <= 0:
+		hasLaunched = true
+		animShark.play("no_bubble")
 	if Input.is_action_just_pressed("g") && !hasLaunched && !isColliding && !isSlapping:
 		hasLaunched = true
 		animShark.play("white_bubble")
@@ -110,3 +114,5 @@ func _on_animation_finished():
 		resetBools()
 		slapFinished = true
 		slapArea.monitoring = false
+	if animShark.animation == 'no_bubble':
+		resetBools()

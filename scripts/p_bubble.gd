@@ -14,6 +14,5 @@ func _physics_process(_delta: float):
 func checkEnemyCollision(body: Node2D):
 	if body.is_in_group('boss'):
 		print('Boss hit')
-		body.movementSpeed = 0.0
 		body.was_hit = true
 		queue_free()

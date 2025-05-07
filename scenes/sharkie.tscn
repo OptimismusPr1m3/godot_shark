@@ -12,7 +12,7 @@ script = ExtResource("1_jiig2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.318405, 0.308)
 sprite_frames = ExtResource("1_c0qoo")
-animation = &"fin_slap"
+animation = &"no_bubble"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 5
