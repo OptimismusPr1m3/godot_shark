@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://clvfsknm1174m"]
+[gd_scene load_steps=9 format=3 uid="uid://b6fragx8318jh"]
 
 [ext_resource type="PackedScene" uid="uid://cv437sv4yfeaa" path="res://scenes/level2.tscn" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bu67q8qkucidw" path="res://scenes/sharkie.tscn" id="1_jjgbg"]
@@ -35,23 +35,23 @@ position = Vector2(728, 477)
 position = Vector2(909, 226)
 
 [node name="Pufferfish" parent="." instance=ExtResource("5_kry3j")]
-position = Vector2(1506, 273)
+position = Vector2(1592, 525)
 
 [node name="Pufferfish2" parent="." instance=ExtResource("5_kry3j")]
-position = Vector2(1395, 444)
+position = Vector2(2464, 141)
 
 [node name="Pufferfish3" parent="." instance=ExtResource("5_kry3j")]
 position = Vector2(1222, 84)
 
 [node name="Pufferfish4" parent="." instance=ExtResource("5_kry3j")]
-position = Vector2(1073, 359)
+position = Vector2(3835, 159)
 
 [node name="Jelly" parent="." instance=ExtResource("6_21xkr")]
-position = Vector2(1899, 209)
+position = Vector2(1567, 245)
 scale = Vector2(0.6, 0.6)
 
 [node name="Jelly2" parent="." instance=ExtResource("6_21xkr")]
-position = Vector2(1749, 381)
+position = Vector2(2691, 493)
 scale = Vector2(0.6, 0.6)
 
 [node name="Endboss" parent="." instance=ExtResource("7_6bp64")]

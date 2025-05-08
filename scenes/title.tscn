@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhdlfghyns1bx"]
+
+[ext_resource type="Texture2D" uid="uid://bxngfq6py61ll" path="res://assets/landing/sharkie_landing.png" id="1_4ignj"]
+[ext_resource type="FontFile" uid="uid://bvk2b4m1gijec" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_wosw1"]
+[ext_resource type="Script" uid="uid://bfgsefoh6h1gc" path="res://scripts/start_button.gd" id="2_p6dhs"]
+
+[node name="Title" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+z_index = 5
+offset_left = 891.0
+offset_top = 151.0
+offset_right = 1147.0
+offset_bottom = 191.0
+theme_override_fonts/font = ExtResource("1_wosw1")
+text = "Start"
+script = ExtResource("2_p6dhs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 9
+offset_left = 485.0
+offset_top = 57.0
+offset_right = 1600.0
+offset_bottom = 130.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+z_index = 16
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_wosw1")
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "[color=red]The Adventure of Sharkie[/color]  "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="SharkieLanding" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(973, 291)
+texture = ExtResource("1_4ignj")
